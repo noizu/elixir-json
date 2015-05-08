@@ -109,7 +109,7 @@ defimpl JSON.Encoder, for: BitString do
   defp encode_binary_character(?",   acc),  do: [?", ?\\  | acc]
   defp encode_binary_character(?\b,  acc),  do: [?b, ?\\  | acc]
   defp encode_binary_character(?\f,  acc),  do: [?f, ?\\  | acc]
-  defp encode_binary_character(?\n,  acc),  do: [?n, ?\\  | acc]
+  defp encode_binary_character(?\n,  acc),  do: [?\n      | acc]
   defp encode_binary_character(?\r,  acc),  do: [?r, ?\\  | acc]
   defp encode_binary_character(?\t,  acc),  do: [?t, ?\\  | acc]
   defp encode_binary_character(?\\,  acc),  do: [?\\, ?\\ | acc]
